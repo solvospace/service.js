@@ -1,9 +1,11 @@
 {
     "name": "service",
+    "license": "MIT",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"turbo dev\" \"sleep 2 && open http://localhost:3007\"",
-        "build": "turbo build",
+        "dev": "concurrently \"turbo run dev --concurrency=10\" \"wait-on http://localhost:3007 && open http://localhost:3007\"",
+        "clean": "turbo run clean && rm -rf .turbo && rm -rf .next && rm -rf node_modules && rm -rf dist",
+        "build": "turbo build --concurrency=1",
         "start": "turbo start",
         "lint": "turbo lint"
     },
@@ -11,10 +13,12 @@
         "concurrently": "^10.0.5",
         "turbo": "^2.10.12",
         "wait-on": "^9.1.0",
-        "typescript": "7.0.2",
-        "@types/node": "24.1.0"
+        "@types/node": "24.1.0",
+        "typescript": "6.0.3",
+        "eslint": "9.39.1"
     },
-    "packageManager": "pnpm@11.25.0",
+    "dependencies": {},
+    "packageManager": "pnpm@12.14.0",
     "engines": {
         "node": "24.20.0"
     }

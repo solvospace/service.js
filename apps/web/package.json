@@ -1,15 +1,14 @@
 {
     "name": "web",
-    "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --inspect=9009 --port 3007",
+        "dev": "next dev --inspect=9009",
         "build": "next build",
         "start": "next start",
         "lint": "eslint"
     },
     "dependencies": {
-        "next": "16.3.4",
+        "next": "16.4.2",
         "react": "19.2.8",
         "react-dom": "19.2.8"
     },
